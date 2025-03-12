@@ -19,49 +19,28 @@ if (hambMenuBtn) {
     }
   });
 }
-window.addEventListener("scroll", (event) => {
-  const scrollY = window.scrollY;
-  if (scrollY >= window.innerHeight * 1 && scrollY < window.innerHeight * 4) {
-    fixedImage.style.position = "fixed";
-  } else {
-    fixedImage.style.position = "static";
-  }
-});
-document.addEventListener('DOMContentLoaded', () => {
-    const imageContainer = document.getElementById("images-container");
 
-    if (!imageContainer) {
-        console.error('לא נמצא אלמנט עם ID "images-container"');
-        return;
+
+$(document).ready(function() {
+  $(".owl-carousel").owlCarousel({
+    loop: true,               // לולאה אינסופית
+    margin: 10,               // רווחים בין התמונות
+    nav: true,                // כפתורי ניווט
+    autoplay: true,           // הפעלה אוטומטית
+    autoplayTimeout: 3000,    // כל 3 שניות מעבר
+    autoplayHoverPause: true, // עצירה כשהעכבר מעל
+    dots: true,               // נקודות ניווט
+    mouseDrag: true,          // גרירה
+    pullDrag: true,           // משיכה
+
+    // רספונסיביות
+    responsive: {
+      0: { items: 1 },        // מסך קטן
+      1000: { items: 2 },      // מסך בינוני
+      1500: { items: 3 } ,     // מסך גדול
+
+      2000: { items: 4 }      // מסך גדול
     }
-
-    // הגדרת משתנים
-    const imageWidth = imageContainer.offsetWidth; // רוחב של התמונה
-    let isMouseDown = false;
-
-    imageContainer.addEventListener('mousedown', (event) => {
-        isMouseDown = true;
-        imageContainer.style.cursor = 'grabbing'; // שינוי סמן לגרירה
-    });
-
-    imageContainer.addEventListener('mouseleave', () => {
-        isMouseDown = false;
-        imageContainer.style.cursor = 'grab'; // חזרה לסמן רגיל
-    });
-
-    imageContainer.addEventListener('mouseup', () => {
-        isMouseDown = false;
-        imageContainer.style.cursor = 'grab'; // חזרה לסמן רגיל
-    });
-
-    imageContainer.addEventListener('mousemove', (event) => {
-        if (!isMouseDown) return;
-
-        // עדכון גלילה כל פעם במרחק של רוחב התמונה
-        if (event.movementX > 0) {
-            imageContainer.scrollLeft += imageWidth;  // גלילה ימינה
-        } else {
-            imageContainer.scrollLeft -= imageWidth;  // גלילה שמאלה
-        }
-    });
+  });
 });
+
