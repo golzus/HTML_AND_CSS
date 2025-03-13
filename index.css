@@ -143,7 +143,7 @@ header nav ul li img {
   background-repeat: no-repeat;
   height: var(--height-screen);
   width: var(--width-screen);
-  background-size: calc(100% + 20vw) 100%;
+  background-size: calc(100% + 23vw) 100%;
 }
 .container-4 .text_and_images_container_2 {
   padding-top: 200px;
@@ -310,6 +310,13 @@ font-weight: bold;
 width: 400px;
 height: 400px;
 }
+
+.container-4 #images-container img {
+  margin: 0 auto;
+ width:60%;
+ height: auto; 
+ /* height:auto; */
+}
 .container-6 .text-content-3 form {
   flex-direction: column;
   width:100%;
@@ -437,7 +444,7 @@ height: 400px;
   }
 
   .container-4 {
-
+    width: var(--width-screen);
     margin-top: -400px;
     padding-top: 100px;
     background-image: url("./assets/images/part4_bg_mobile.png");
@@ -445,16 +452,17 @@ height: 400px;
     background-repeat: no-repeat;
     background-size: cover;
     height: var(--height-screen);
+    background-size: 128%;
   }
   .container-4 #images-container img {
      margin: 0 auto;
-    width: 90%;
-    height: 80%; 
+    width: 400px;
     height:auto;
   }
   .container-5 {
     background-image: url("./assets/images/part5_bg__mobile.png");
     background-position: -350px center;
+    margin-top: -250px;
   }
   .container-5 .text-and-links-content {
     width: 70%;
